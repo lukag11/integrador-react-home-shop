@@ -1,0 +1,9 @@
+#DropDrawList {
+  margin-left: 5px;
+  transition: 200ms;
+  color: black;
+}
+
+:checked ~ #DropDrawList {
+  transform: rotate(90deg) translate(0px, -5px);
+}
