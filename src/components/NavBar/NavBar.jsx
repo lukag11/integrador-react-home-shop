@@ -67,12 +67,12 @@ const Navbar = ({ setSection }) => {
               </>
             ) : (
               <>
-                {/* <Link to="/login">
+                <Link to="/login">
                   <li id="registrarse">Iniciar Sesion</li>
                 </Link>
                 <Link to="/register">
                   <li id="iniciarSesion">Registrarse</li>
-                </Link> */}
+                </Link>
               </>
             )}
 
