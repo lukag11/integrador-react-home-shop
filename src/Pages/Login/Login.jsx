@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import {
   LoginContainInput,
-  LoginForm,
+  FormLogin,
   LoginInput,
   LoginLabel,
-  LoginTitle,
-  LoginWrapper,
+  Title,
+  WrapperLogin,
 } from "./LoginStyles";
 import { Link } from "react-router-dom";
 import { login } from "../../data/login";
@@ -17,6 +17,7 @@ import { loginUser } from "../../axios/axiosUser";
 import { setCurrentUser } from "../../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { LoadIcon } from "../Checkout/CheckoutStyles";
+import Header from "../../components/Header/Header";
 
 const Login = () => {
   useEffect(() => {
@@ -68,34 +69,37 @@ const Login = () => {
   });
 
   return (
-    <LoginWrapper ref={loginRef}>
-      <LoginTitle>INICIO DE SESIÓN</LoginTitle>
-      <h2 style={{ color: "var(--red)" }}>{errorMsg}</h2>
-      <LoginForm onSubmit={formik.handleSubmit}>
-        {login.map((item) => (
-          <LoginContainInput key={item.id}>
-            <LoginLabel htmlFor={item.name}>{item.label}</LoginLabel>
-            <LoginInput
-              type={item.type}
-              id={item.name}
-              placeholder={item.placeholder}
-              {...formik.getFieldProps(`${item.name}`)}
-            />
+    <>
+      <Header />
+      <WrapperLogin ref={loginRef}>
+        <Title>INICIO DE SESIÓN</Title>
+        <h2 style={{ color: "var(--red)" }}>{errorMsg}</h2>
+        <FormLogin onSubmit={formik.handleSubmit}>
+          {login.map((item) => (
+            <LoginContainInput key={item.id}>
+              <LoginLabel htmlFor={item.name}>{item.label}</LoginLabel>
+              <LoginInput
+                type={item.type}
+                id={item.name}
+                placeholder={item.placeholder}
+                {...formik.getFieldProps(`${item.name}`)}
+              />
 
-            {formik.touched[item.name] && formik.errors[item.name] ? (
-              <p>{formik.errors[item.name]}</p>
-            ) : null}
-          </LoginContainInput>
-        ))}
+              {formik.touched[item.name] && formik.errors[item.name] ? (
+                <p>{formik.errors[item.name]}</p>
+              ) : null}
+            </LoginContainInput>
+          ))}
 
-        <button type="submit" disabled={loading}>
-          {!loading ? "Ingresar" : <LoadIcon />}
-        </button>
-        <p>
-          ¿No tienes una cuenta? <Link to="/register">Registrate</Link>
-        </p>
-      </LoginForm>
-    </LoginWrapper>
+          <button type="submit" disabled={loading}>
+            {!loading ? "Ingresar" : <LoadIcon />}
+          </button>
+          <p>
+            ¿No tienes una cuenta? <Link to="/register">Registrate</Link>
+          </p>
+        </FormLogin>
+      </WrapperLogin>
+    </>
   );
 };
 export default Login;

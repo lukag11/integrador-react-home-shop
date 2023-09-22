@@ -1,8 +1,8 @@
-import BackgroundBG from "../../assets/imgs/register/bg-img.jpg";
+import BackgroundBG from "../../assets/imgs/register/fondogris.jpg";
 import styled from "styled-components";
 
-export const LoginWrapper = styled.div`
-  margin-top: 80px;
+export const WrapperLogin = styled.div`
+  margin-top: 0px;
   background-image: url("${BackgroundBG}");
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,12 +23,13 @@ export const LoginWrapper = styled.div`
   }
 `;
 
-export const LoginTitle = styled.h1`
+export const Title = styled.h1`
   font-size: 48px;
   color: var(--dark-violet);
   text-shadow: -1px 0 1px var(--white);
   text-align: center;
-  font-family: "Under-Rated";
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   @media (max-width: 1024px) {
     font-size: 42px;
@@ -44,26 +45,25 @@ export const LoginTitle = styled.h1`
   }
 `;
 
-export const LoginForm = styled.form`
+export const FormLogin = styled.form`
   display: flex;
   flex-direction: column;
   padding: 20px 30px;
   align-items: center;
   gap: 20px;
-  background-color: var(--white-menus);
-  box-shadow: -6px 6px 6px var(--shadows), 6px 6px 6px var(--shadows);
+  background-color: grey;
   max-width: 500px;
   width: 100%;
 
   p {
     font-size: 16px;
-    color: var(--dark-violet);
+    color: blue;
     text-align: center;
   }
 
   p a {
     margin-left: 8px;
-    color: var(--dark-violet);
+    color: black;
     font-weight: 600;
   }
 
@@ -82,9 +82,8 @@ export const LoginForm = styled.form`
     padding: 10px 20px;
     font-weight: 600;
     font-size: 22px;
-    border: 1px solid var(--dark-violet);
-    background-color: var(--dark-violet);
-    color: var(--white);
+    border: white;
+    background-color: white;
     cursor: pointer;
 
     transition: all ease 0.2s;
@@ -95,7 +94,7 @@ export const LoginForm = styled.form`
 
     &:hover {
       background-color: #112fb0;
-      color: var(--grey-light);
+      color: blueviolet;
       transition: all ease-in 0.2s;
     }
 
@@ -116,12 +115,12 @@ export const LoginContainInput = styled.div`
   align-items: center;
 
   p {
-    color: var(--red);
+    color: red;
   }
 `;
 
 export const LoginLabel = styled.label`
-  color: var(--dark-violet);
+  color: black;
   font-size: 20px;
   font-weight: 600;
 
@@ -134,7 +133,7 @@ export const LoginLabel = styled.label`
 `;
 export const LoginInput = styled.input`
   text-align: center;
-  background-color: transparent;
+  background-color: white;
   padding: 10px;
   font-size: 20px;
   width: 100%;
@@ -145,7 +144,7 @@ export const LoginInput = styled.input`
   transition: all ease 0.15s;
 
   &:focus {
-    border-color: var(--dark-violet);
+    border-color: blueviolet;
     transition: all ease 0.15s;
   }
 
@@ -161,7 +160,7 @@ export const LoginInput = styled.input`
     left: -30px;
     transform: scale(0.6);
     transition: ease-in 0.15s;
-    color: var(--dark-violet);
+    color: red;
   }
 `;
 export const LoginBtn = styled.input`
@@ -172,16 +171,16 @@ export const LoginBtn = styled.input`
   padding: 10px 20px;
   font-weight: 600;
   font-size: 22px;
-  border: 1px solid var(--dark-violet);
-  background-color: var(--dark-violet);
-  color: var(--white);
+  border: 1px solid red;
+  background-color: black;
+  color: white;
   cursor: pointer;
 
   transition: all ease 0.2s;
 
   &:hover {
     background-color: #112fb0;
-    color: var(--grey-light);
+    color: green;
     transition: all ease-in 0.2s;
   }
 

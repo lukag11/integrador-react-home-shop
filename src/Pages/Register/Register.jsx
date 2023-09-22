@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  LoadIcon,
+  IconCircle,
   InputContainer,
   FormularioRegister,
   RegisterInput,
@@ -17,6 +17,7 @@ import { setCurrentUser } from "../../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { useRedirect } from "../../hooks/useRedirect";
 import { createUser } from "../../axios/axiosUser";
+import Header from "../../components/Header/Header";
 
 const Register = () => {
   useEffect(() => {
@@ -94,66 +95,73 @@ const Register = () => {
   });
 
   return (
-    <WrapperRegister ref={registerRef}>
-      <TitleReg>Registro</TitleReg>
-      {toggleRegister && (
-        <h2
-          style={{ color: "var(--red)", fontSize: "20px", textAlign: "center" }}
-        >
-          {toggleMsg}
-        </h2>
-      )}
-      <FormularioRegister onSubmit={formik.handleSubmit}>
-        {register.map((item) => (
-          <InputContainer key={item.id}>
-            <RegisterLabel htmlFor={item.name}>{item.label}</RegisterLabel>
-            <RegisterInput
-              type={item.type}
-              id={item.name}
-              placeholder={item.placeholder}
-              {...formik.getFieldProps(`${item.name}`)}
-            />
-            {formik.touched[item.name] && formik.errors[item.name] ? (
-              <p>{formik.errors[item.name]}</p>
-            ) : null}
-          </InputContainer>
-        ))}
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <RegisterLabel
-            htmlFor="header"
+    <>
+      <Header />
+      <WrapperRegister ref={registerRef}>
+        <TitleReg>Registro</TitleReg>
+        {toggleRegister && (
+          <h2
             style={{
-              alignSelf: "flex-start",
-              fontSize: "14px",
-              width: "50%",
-              marginTop: "20px",
+              color: "var(--red)",
+              fontSize: "20px",
+              textAlign: "center",
             }}
           >
-            Posee clave admin?{" "}
-          </RegisterLabel>
-          <RegisterInput
-            type="text"
-            id="header"
-            {...formik.getFieldProps("header")}
-            style={{ fontSize: "14px", width: "50%" }}
-          />
-        </div>
+            {toggleMsg}
+          </h2>
+        )}
+        <FormularioRegister onSubmit={formik.handleSubmit}>
+          {register.map((item) => (
+            <InputContainer key={item.id}>
+              <RegisterLabel htmlFor={item.name}>{item.label}</RegisterLabel>
+              <RegisterInput
+                type={item.type}
+                id={item.name}
+                placeholder={item.placeholder}
+                {...formik.getFieldProps(`${item.name}`)}
+              />
+              {formik.touched[item.name] && formik.errors[item.name] ? (
+                <p>{formik.errors[item.name]}</p>
+              ) : null}
+            </InputContainer>
+          ))}
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <RegisterLabel
+              htmlFor="header"
+              style={{
+                alignSelf: "flex-start",
+                fontSize: "14px",
+                width: "50%",
+                marginTop: "20px",
+              }}
+            >
+              Clave Administrador?{" "}
+            </RegisterLabel>
+            <RegisterInput
+              type="text"
+              id="header"
+              {...formik.getFieldProps("header")}
+              style={{ fontSize: "14px", width: "50%" }}
+            />
+          </div>
 
-        <button type="submit" disabled={isLoading}>
-          {!isLoading ? "Registrarse" : <LoadIcon />}
-        </button>
-        <p>
-          ¿Ya tienes una cuenta?<Link to="/login">Inicia sesión</Link>
-        </p>
-      </FormularioRegister>
-    </WrapperRegister>
+          <button type="submit" disabled={isLoading}>
+            {!isLoading ? "Registrarse" : <IconCircle />}
+          </button>
+          <p>
+            ¿Ya tienes una cuenta?<Link to="/login">Inicia sesión</Link>
+          </p>
+        </FormularioRegister>
+      </WrapperRegister>
+    </>
   );
 };
 export default Register;

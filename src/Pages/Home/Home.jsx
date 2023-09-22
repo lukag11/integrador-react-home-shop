@@ -9,6 +9,7 @@ import { GlobalStylesContainer } from "../../Styles/GlobalStyles";
 import { HomeWrapper } from "./HomeStyles";
 import Footer from "../../components/Footer/Footer";
 import ScrollImages from "../../components/ScrollImages/ScrollImages";
+import UserLogged from "../../components/UserLogged/UserLogged";
 
 const Home = ({ secciones }) => {
   return (
@@ -17,13 +18,16 @@ const Home = ({ secciones }) => {
         <HomeWrapper>
           <header>
             <Navbar {...secciones} />
+
             <Hero />
           </header>
+
           <Carro />
           <ScrollImages />
 
           <SectionVentas {...secciones} />
         </HomeWrapper>
+
         <Footer />
       </GlobalStylesContainer>
     </>

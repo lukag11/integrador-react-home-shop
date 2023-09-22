@@ -1,9 +1,9 @@
-import BackgroundBG from "../../assets/imgs/register/fondoceleste.jpg";
+import BackgroundBG from "../../assets/imgs/register/fondogris.jpg";
 import { FaCircleNotch } from "react-icons/fa";
 import styled from "styled-components";
 
 export const WrapperRegister = styled.div`
-  margin-top: 80px;
+  margin-top: 0px;
   background-image: url("${BackgroundBG}");
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,8 +26,8 @@ export const WrapperRegister = styled.div`
 
 export const TitleReg = styled.h1`
   font-size: 48px;
-  color: greenyellow;
-  text-shadow: -1px 0 1px red;
+  color: black;
+  text-shadow: -1px 0 1px white;
   font-family: "Courier New", Courier, monospace;
 
   @media (max-width: 1024px) {
@@ -50,18 +50,19 @@ export const FormularioRegister = styled.form`
   padding: 20px 30px;
   align-items: center;
   gap: 20px;
-  background-color: yellow;
+  background-color: white;
   max-width: 500px;
   width: 100%;
 
   p {
     font-size: 16px;
+    color: red;
     text-align: center;
   }
 
   p a {
     margin-left: 8px;
-    color: black;
+    color: blue;
     font-weight: 600;
   }
 
@@ -79,14 +80,18 @@ export const FormularioRegister = styled.form`
     padding: 10px 20px;
     font-weight: 600;
     font-size: 22px;
-    border: 1px solid red;
-    background-color: red;
-    color: white;
+    border: 1px solid black;
+    background-color: grey;
     cursor: pointer;
 
-    &:hover {
+    transition: all ease 0.2s;
+    &:disabled {
       background-color: black;
-      color: white;
+    }
+
+    &:hover {
+      background-color: green;
+      color: black;
       transition: all ease-in 0.2s;
     }
 
@@ -105,7 +110,6 @@ export const InputContainer = styled.div`
   gap: 10px;
   width: 100%;
   align-items: center;
-  border: 1px solid black;
 
   p {
     color: red;
@@ -128,17 +132,37 @@ export const RegisterInput = styled.input`
   text-align: center;
   background-color: transparent;
   padding: 10px;
-  font-size: 10px;
-  width: 80%;
+  font-size: 20px;
+  width: 100%;
   border: none;
   outline: none;
   border-bottom: 2px solid black;
   position: relative;
   transition: all ease 0.15s;
+
+  &:focus {
+    border-color: black;
+    transition: all ease 0.15s;
+  }
+
+  &::placeholder {
+    transform: scale(1);
+    transition: all ease 0.15s;
+    position: absolute;
+    text-align: left;
+  }
+
+  &:focus::placeholder {
+    top: -5px;
+    left: -30px;
+    transform: scale(0.6);
+    transition: ease-in 0.15s;
+    color: black;
+  }
 `;
 
-export const LoadIcon = styled(FaCircleNotch)`
-  color: black;
+export const IconCircle = styled(FaCircleNotch)`
+  color: white;
   font-size: 24px;
   @keyframes rotate {
     0% {
