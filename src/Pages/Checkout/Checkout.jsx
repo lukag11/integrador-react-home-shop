@@ -15,14 +15,14 @@ import {
   CheckoutContainBG,
 } from "./CheckoutStyles";
 
-// import { CartCard } from "../../components/CartCard/CartCard";
+import { CartCard } from "../../components/CartCard/CartCard";
 import { useEffect, useRef } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FaTrash } from "react-icons/fa";
-// import { clearCart } from "../../redux/cartSlice/cartSice";
+import { clearCart } from "../../redux/cartSlice/cartSice";
 import { useNavigate } from "react-router-dom";
-// import { CartBtnConfirm } from "../../components/NavBar/CartMenu/CartMenuStyles";
+import { CartBtnConfirm } from "../../components/NavBar/CartMenu/CartMenuStyles";
 import { createOrders } from "../../axios/axiosOrders";
 
 const Checkout = () => {
@@ -64,26 +64,26 @@ const Checkout = () => {
       adress: "",
     },
     validationSchema,
-    onSubmit: async (values) => {
+    onSubmit: async(values) => {
       const orderData = {
         cartItems,
         price: totalPrice,
         shippingCost,
-        total: totalPrice + shippingCost,
-        shippingDetails: { ...values },
-      };
+        total: (totalPrice + shippingCost),
+        shippingDetails: {...values}
+      }
       try {
-        await createOrders(orderData, dispatch, currentUser);
-        navigate("/success");
-        // dispatch(clearCart());
+        await createOrders(orderData, dispatch, currentUser)
+        navigate("/success")
+        dispatch(clearCart())
       } catch (error) {
-        alert("Algo salió mal al crear la orden");
+        alert('Algo salió mal al crear la orden')
       }
     },
   });
 
   const clearItemsToCart = () => {
-    // window.confirm("¿Vaciar carrito de compra?") && dispatch(clearCart());
+    window.confirm("¿Vaciar carrito de compra?") && dispatch(clearCart());
   };
 
   useEffect(() => {
@@ -165,7 +165,7 @@ const Checkout = () => {
         <ContainerVertical>
           <RightTitleText>TU PEDIDO ACTUAL: </RightTitleText>
           <RightContainer>
-            {/* {!cartItems.length ? null : (
+            {!cartItems.length ? null : (
               <CartBtnConfirm
                 style={{ alignSelf: "center", width: "95%" }}
                 onClick={clearItemsToCart}
@@ -177,15 +177,15 @@ const Checkout = () => {
                   size="22px"
                 />
                 Vaciar carrito
-              </CartBtnConfirm> 
-            )} */}
-            {/* <ItemsCartContainer>
+              </CartBtnConfirm>
+            )}
+            <ItemsCartContainer>
               {!cartItems.length ? (
                 <h4>*Realizá un pedido*</h4>
               ) : (
                 cartItems.map((item) => <CartCard key={item.id} {...item} />)
               )}
-            </ItemsCartContainer> */}
+            </ItemsCartContainer>
 
             <BottomPriceDiv>
               {cartItems.length >= 1 && (

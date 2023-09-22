@@ -5,15 +5,14 @@ export const UserLoggedContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--grey-dark);
+  border-bottom: 1px solid darkcyan;
   margin-top: 80px;
   padding: 10px;
-  background-color: var(--grey-light);
+  background-color: green;
   position: sticky;
   top: 80px;
   z-index: 3;
   gap: 20px;
-  border: 1px solid red;
 
   span {
     font-size: 20px;
@@ -21,19 +20,19 @@ export const UserLoggedContainer = styled.div`
     text-align: center;
   }
   button {
-    background-color: var(--orange);
+    background-color: blue;
     font-size: 16px;
-    color: var(--white);
+    color: white;
     padding: 5px 8px;
-    border: 1px solid var(--orange);
+    border: 1px solid orangered;
     border-radius: 5px;
     cursor: pointer;
     transition: all ease 0.15s;
 
     &:hover {
-      background-color: var(--orange2);
-      border-color: var(--orange2);
-      color: var(--grey-light);
+      background-color: orange;
+      border-color: red;
+      color: green;
     }
   }
 `;

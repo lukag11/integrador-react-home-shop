@@ -73,7 +73,7 @@ const Login = () => {
       <Header />
       <WrapperLogin ref={loginRef}>
         <Title>INICIO DE SESIÓN</Title>
-        <h2 style={{ color: "var(--red)" }}>{errorMsg}</h2>
+        <h2 style={{ color: "red" }}>{errorMsg}</h2>
         <FormLogin onSubmit={formik.handleSubmit}>
           {login.map((item) => (
             <LoginContainInput key={item.id}>

@@ -1,6 +1,6 @@
 import { FaCircleNotch } from "react-icons/fa";
 import styled from "styled-components";
-import ImgBG from "../../assets/imgs/checkout/bg-img.jpg";
+import ImgBG from "../../assets/imgs/register/fondogris.jpg";
 
 export const CheckoutContainBG = styled.div`
   width: 100%;
@@ -40,9 +40,9 @@ export const ContainerVertical = styled.div`
   gap: 30px;
 
   h1 {
-    color: var(--orange);
+    color: red;
     font-size: 28px;
-    text-shadow: -1px 1px 1px var(--soft-black);
+    text-shadow: -1px 1px 1px black;
 
     @media (max-width: 1024px) {
       text-align: center;
@@ -66,7 +66,7 @@ export const ContainerVertical = styled.div`
 export const RightTitleText = styled.h2`
   color: var(--black);
   font-size: 24px;
-  text-shadow: -1px 1px 1px var(--grey-light);
+  text-shadow: -1px 1px 1px grey;
   @media (max-width: 1024px) {
     text-align: center;
   }
@@ -83,14 +83,13 @@ export const RightTitleText = styled.h2`
 `;
 
 export const LeftContainer = styled.div`
-  border: 1px solid var(--grey-dark);
+  border: 1px solid green;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  background-color: var(--white-menus);
+  background-color: white;
   padding: 10px;
-  box-shadow: -5px 10px 6px var(--shadows), 5px 10px 6px var(--shadows);
 
   form {
     display: grid;
@@ -127,7 +126,7 @@ export const InputContainer = styled.div`
   gap: 15px;
 
   label {
-    color: var(--orange2);
+    color: orange;
     font-size: 22px;
     font-weight: 600;
 
@@ -147,7 +146,7 @@ export const InputContainer = styled.div`
   input {
     border: none;
     outline: none;
-    border-bottom: 2px solid var(--light-orange);
+    border-bottom: 2px solid orangered;
     width: 100%;
     background-color: transparent;
     padding: 10px;
@@ -162,7 +161,7 @@ export const InputContainer = styled.div`
   }
 
   input:focus {
-    border-color: var(--orange2);
+    border-color: orangered;
     transition: all ease 0.15s;
   }
 
@@ -178,13 +177,13 @@ export const InputContainer = styled.div`
     left: -30px;
     transform: scale(0.6);
     transition: ease-in 0.15s;
-    color: var(--blue);
+    color: blue;
   }
 
   p {
     margin-top: -5px;
     text-align: right;
-    color: var(--red);
+    color: red;
     font-size: 14px;
   }
 
@@ -198,9 +197,9 @@ export const InputSubmit = styled.div`
   grid-column-start: 1;
   grid-column-end: span 2;
   button {
-    border: 1px solid var(--light-orange);
-    background-color: var(--orange);
-    color: var(--white);
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
     font-weight: 600;
     width: 100%;
     padding: 10px 20px;
@@ -222,13 +221,13 @@ export const InputSubmit = styled.div`
   }
 
   button:hover {
-    background-color: var(--orange2);
-    color: var(--grey-light);
+    background-color: red;
+    color: grey;
   }
 
   button:disabled {
-    background-color: var(--light-orange);
-    color: var(--grey-light);
+    background-color: gold;
+    color: gold;
     cursor: not-allowed;
   }
 
@@ -243,7 +242,7 @@ export const RightContainer = styled(LeftContainer)`
 `;
 
 export const ItemsCartContainer = styled.div`
-  border-top: 1px solid var(--black);
+  border-top: 1px solid red;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -251,7 +250,7 @@ export const ItemsCartContainer = styled.div`
   height: 500px;
   overflow-y: scroll;
   gap: 30px;
-  border-bottom: 1px dashed var(--dark-violet);
+  border-bottom: 1px dashed violet;
 
   @media (max-width: 768px) {
     height: 400px;
@@ -282,7 +281,7 @@ export const SubtotalDiv = styled.div`
 
   p {
     font-weight: 600;
-    color: var(--dark-violet);
+    color: violet;
     font-size: 20px;
 
     @media (max-width: 768px) {
@@ -294,7 +293,7 @@ export const SubtotalDiv = styled.div`
   }
 
   span {
-    color: var(--dark-violet);
+    color: red;
     font-size: 20px;
 
     @media (max-width: 768px) {
@@ -317,11 +316,11 @@ export const TotalPriceDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-top: 2px solid var(--dark-violet);
+  border-top: 2px solid red;
   padding-top: 10px;
 
   h4 {
-    color: var(--dark-violet);
+    color: red;
     font-size: 20px;
 
     @media (max-width: 768px) {
@@ -333,7 +332,7 @@ export const TotalPriceDiv = styled.div`
   }
 
   span {
-    color: var(--dark-violet);
+    color: red;
     font-weight: 600;
     font-size: 20px;
 
@@ -347,7 +346,7 @@ export const TotalPriceDiv = styled.div`
 `;
 
 export const LoadIcon = styled(FaCircleNotch)`
-  color: var(--white);
+  color: white;
   font-size: 24px;
   @keyframes rotate {
     0% {

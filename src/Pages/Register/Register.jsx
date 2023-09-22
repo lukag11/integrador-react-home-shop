@@ -102,7 +102,7 @@ const Register = () => {
         {toggleRegister && (
           <h2
             style={{
-              color: "var(--red)",
+              color: "red",
               fontSize: "20px",
               textAlign: "center",
             }}
